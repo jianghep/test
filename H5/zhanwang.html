@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="carousel">
+        <div class="carousel-images">
+            <div class="carousel-image" style="background-image: url('IMGE/图片/1.jpg');"></div>
+        </div>
+    </div>
+    <div><footer>
+        <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+    </footer></div>
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-image').length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slides.style.transform = 'translateX(' + offset + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+        
+        showSlide(currentIndex);
+    </script>
+
+</body>
+</html>

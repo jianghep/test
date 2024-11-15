@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="additional-text">
+        <div class="ccc">
+            <h1>廉洁铸魂强根本 挺膺奋进建新功：未来展望</h1>
+        </div>
+        <p>在新时代的征程中，廉洁文化不仅是社会进步的基石，更是教育事业的灵魂。以习近平新时代中国特色社会主义思想为指引，全面贯彻党的二十大精神，
+            我们致力于构建党风清正、政风清明、校风清朗、教风清淳、学风清新的“五清校园”，为培养德智体美劳全面发展的社会主义建设者和接班人奠定坚实基础。
+            本文旨在探讨“廉洁铸魂 强根本 挺膺奋进 建新功”这一主题下的指导思想、活动形式及未来展望，以期在新时代的浪潮中，共同绘制廉洁教育的宏伟蓝图。
+        </p>
+          
+        <h2>一、指导思想：根植廉洁理念，引领未来发展</h2>
+        <p>在新时代的背景下，我们坚持以习近平新时代中国特色社会主义思想为指导，深刻领会党的二十大精神，将理想信念作为强基固本的根本，以先进文化启迪智慧、滋养心灵。通过强化廉洁教育，我们旨在培养一支具有高尚品德、清正廉洁的教师队伍，营造一个风清气正的教育环境，让廉洁成为一种文化自觉，一种生活方式，深入每一位师生的心田。</p>
+     
+        <h2>二、活动主题及形式：创新载体，传承廉洁文化</h2>
+        <p>本次活动以“廉洁铸魂强根本 挺膺奋进建新功”为主题，通过以下形式进行：</p>
+        <ul>
+            <li>H5页面大赛：利用现代信息技术，创作一系列以廉洁为主题的H5互动作品。</li>
+            <li>廉洁文化讲堂：定期举办廉洁文化讲堂，邀请专家学者、先进典型分享廉洁故事。</li>
+            <li>廉洁实践活动：组织师生参与社区服务、志愿服务等实践活动。</li>
+            <li>廉洁文化进课堂：将廉洁教育纳入学校课程体系，开发廉洁文化校本课程。</li>
+        </ul>
+     
+        <h2>三、未来展望：挺膺奋进，共绘廉洁教育新篇章</h2>
+        <p>展望未来，我们将继续深化“廉洁铸魂 强根本 挺膺奋进 建新功”的实践探索，不断创新廉洁教育的形式和内容，让廉洁文化成为推动教育事业高质量发展的强大动力。</p>
+        <ul>
+            <li>塑造高尚人格：帮助师生树立正确的世界观、人生观、价值观。</li>
+            <li>优化教育生态：促进教育公平，净化教育环境。</li>
+            <li>引领社会风气：通过校园廉洁文化的辐射作用，带动社会整体风气的提升。</li>
+        </ul>
+     
+        <p>总之，“廉洁铸魂 强根本 挺膺奋进 建新功”不仅是对当前工作的要求，更是对未来发展的美好憧憬。让我们携手并进，在新时代的征程上，以廉洁铸魂，强根本；挺膺奋进，建新功，共同开创廉洁教育的新篇章，为实现中华民族伟大复兴的中国梦贡献力量。</p>
+    </div>
+    
+    <footer>
+        <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-image').length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slides.style.transform = 'translateX(' + offset + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+        
+        showSlide(currentIndex);
+    </script>
+
+</body>
+</html>

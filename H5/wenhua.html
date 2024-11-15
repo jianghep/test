@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+
+        <div class="additional-text">
+            <div class="ccc">
+                <h1>深入学习贯彻清廉文化，筑牢拒腐防变的坚固防线</h1>
+            </div>
+            <p>
+                在全面从严治党的时代背景下，清廉文化建设对于推动全面从严治党向纵深发展、营造风清气正的政治生态具有重要意义。习近平总书记关于清廉文化建设的系列重要讲话，为我们指明了方向、提供了根本遵循。本文将从廉洁文化的起源和发展历程、深入学习清廉文化的内涵与要求、强化清廉文化的实践养成、以及构建具有中国特色的清廉文化体系四个方面展开论述。
+            </p>
+            
+            <h2>一、廉洁文化的起源和发展历程</h2>
+            <p>
+                廉洁文化源远流长，其根源可追溯至古代社会的道德规范和伦理准则。在中国，早在先秦时期，儒家思想就强调“廉洁奉公”、“清正廉洁”的为官之道，为后世树立了廉洁文化的典范。随着历史的演进，廉洁文化逐渐融入到社会的各个层面，成为衡量个人品德和社会风气的重要标尺。
+            </p>
+            
+            <h2>二、深入学习清廉文化的内涵与要求</h2>
+            <p>
+                清廉文化是中华民族优秀传统文化的重要组成部分，是社会主义核心价值观在廉洁领域的具体体现。它强调廉洁自律、公正法治、诚信友爱等价值观念，旨在通过文化的力量引导人们树立正确的权力观、地位观、利益观，自觉抵制各种腐败思想的侵蚀。
+            </p>
+            <div style="text-align: center;">
+                <img src="IMGE/图片/W020230215607151487266.jpg" alt="《礼记·礼运》书影" width="80%">
+                <div class="caption">《礼记·礼运》书影</div>
+            </div>
+            <p>
+                总书记强调，要加强党风廉政建设和反腐败斗争，必须从根本上加强思想道德建设，提高党员干部的廉洁从政意识。这要求我们深入学习和理解清廉文化的丰富内涵和实践要求，将其内化于心、外化于行，成为党员干部的思想自觉和行动自觉。
+            </p>
+            
+            <h2>三、强化清廉文化的实践养成</h2>
+            <p>
+                学习清廉文化不仅要入脑入心，更要付诸实践。我们要在日常工作和生活中不断强化清廉意识的养成，做到言行一致、表里如一。
+            </p>
+            <p>
+                总书记指出，领导干部要带头践行清廉文化，以身作则、率先垂范。这要求我们在实际工作中要坚持原则、秉公办事，不徇私情、不谋私利；在生活中要崇尚节俭、杜绝浪费，树立良好的家风家规，共同营造崇廉尚洁的社会风尚。
+            </p>
+            
+            <h2>四、构建具有中国特色的清廉文化体系</h2>
+            <p>
+                廉洁文化是中华民族优秀传统文化的重要组成部分，是社会主义核心价值观的重要内容。传承和发扬廉洁文化，对于推动社会进步、促进国家发展具有重要意义。
+            </p>
+            <p>
+                在传承中华优秀传统文化的基础上，我们还要结合时代特点和实践要求，不断创新和发展清廉文化内涵，构建具有中国特色的清廉文化体系。总书记提出，要深入挖掘中华优秀传统文化的廉洁因子，赋予其新的时代内涵。
+            </p>
+            <p>
+                这要求我们在传承中创新，在创新中发展，充分挖掘和利用我国丰富的历史文化资源，打造具有鲜明特色的清廉文化品牌和活动载体。同时，还要加强国际交流与合作，吸收借鉴其他国家的有益经验做法，不断丰富和完善清廉文化内涵。
+            </p>
+            <p>
+                总之，深入学习贯彻清廉文化是新时代加强党风廉政建设、推进全面从严治党的重要举措。我们要以总书记关于清廉文化建设的重要讲话为指导，不断加强清廉文化的理论研究和实践活动，努力构建具有中国特色的清廉文化体系，为营造风清气正的政治生态提供有力支撑。
+            </p>
+        </div>
+        <div><footer>
+            <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+        </footer></div>
+        <script>
+            window.addEventListener('load', function() {
+                document.body.classList.add('loaded');
+            });
+    
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-image').length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slides.style.transform = 'translateX(' + offset + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+        
+        showSlide(currentIndex);
+    </script>
+
+</body>
+</html>

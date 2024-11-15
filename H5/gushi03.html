@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <body>
+        <div class="additional-text">
+            <div class="ccc">
+                <h1>张桂梅的坚守与奉献</h1>
+            <div class="container">
+                <p>在云南省华坪县，张桂梅的名字已经家喻户晓。她不仅是全国脱贫攻坚楷模、感动中国2020年度人物、全国优秀共产党员，更是时代楷模。</p>
+                
+                <p>而这一切荣誉的背后，是她几十年如一日的坚守与奉献，更是她廉洁自律、无私奉献精神的生动体现。</p>
+                <div style="text-align: center;">
+                <img src="IMGE/图片/b9526b1ffbf5690dd814302b943c87c.jpg" alt="71颁奖" width="70%">
+                <div class="caption">6月29日，庆祝中国共产党成立100周年“七一勋章”颁授仪式在北京人民大会堂金色大厅隆重举行。
+                    中共中央总书记、国家主席、中央军委主席习近平向“七一勋章”获得者张桂梅颁授勋章。新华社记者 李学仁 摄</div>
+            </div>
+         
+                <p>张桂梅出生在一个普通的家庭，但她却拥有一颗不平凡的心。她深知教育的重要性，更知道在贫困山区，女孩们接受教育的机会是多么难得。因此，她毅然决然地选择扎根山区，为女孩们点亮求知的明灯。
+                    在华坪县，张桂梅创办了全国第一所全免费女子高中——华坪女子高中。她用自己的工资和奖金，甚至不惜卖掉自己的首饰，来资助那些贫困的女孩们完成学业。
+                    她吃、穿、用都很简朴，却将节省下来的每一分钱都用在了教育和儿童福利事业上。</p>
+         
+                <p>张桂梅的廉洁自律是出了名的。她从不接受任何形式的馈赠和贿赂，始终坚持用自己的双手去创造价值。她深知，作为一名教育工作者，她的职责是教书育人，而不是追求个人的名利和享受。
+                    因此，她始终保持着清醒的头脑和坚定的信念，不为外界的诱惑所动摇。
+                    在张桂梅的带领下，华坪女子高中取得了显著的成就。越来越多的女孩们在这里接受了良好的教育，走出了大山，走向了更广阔的天地。
+                    而张桂梅本人，也因为她的卓越贡献和无私奉献，赢得了社会各界的广泛赞誉和尊敬。</p>
+
+                    <div style="text-align: center;">
+                    <img src="IMGE/图片/张1.gif" alt="雨中目送" width="70%">
+                    <div class="caption">64岁的张桂梅在暴雨中护送150名高三学生奔赴高考考场。（图片来源：网络）</div>
+                </div>
+
+                <p>然而，张桂梅并没有因此而满足。她依然坚守在教育的第一线，为更多的女孩们送去知识的光芒和希望。她用自己的行动诠释了什么是真正的廉洁奉公、无私奉献。</p>
+         
+                <p>张桂梅的故事是感人的，更是励志的。她用自己的生命书写了一部关于教育、关于奉献、关于廉洁的壮丽诗篇。
+                    她的故事告诉我们，只有坚守初心、廉洁自律、无私奉献，才能赢得人民的信任和尊敬，才能为社会的进步和发展贡献自己的力量。</p>
+         
+                <p>张桂梅的事迹和精神不仅激励着我们每一个人，更让我们看到了廉洁自律的力量和价值。
+                    在未来的日子里，让我们以张桂梅为榜样，用自己的实际行动去践行廉洁自律的精神，共同为社会的和谐稳定和繁荣发展贡献自己的力量。</p>
+            </div>
+        </div>   
+        <div><footer>
+            <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+        </footer> </div>
+        <script>
+            let currentIndex = 0;
+    
+            function showSlide(index) {
+                const slides = document.querySelector('.carousel-images');
+                const totalSlides = document.querySelectorAll('.carousel-image').length;
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = 'translateX(' + offset + '%)';
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            setInterval(() => {
+                nextSlide();
+            }, 4000);
+            
+            showSlide(currentIndex);
+        </script>
+</body>
+</html>

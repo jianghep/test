@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    <body>
+        <div class="additional-text">
+            <div class="ccc">
+                <h1>周恩来总理的清廉风范</h1>
+            </header>
+            <div class="container">
+                <p>在百年党史的长河中，周恩来总理以其卓越的领导才能和清廉的生活作风，成为了后人学习的楷模。</p>
+                
+                <p>他的清廉，不仅体现在对国家大事的深思熟虑上，更体现在日常生活的点滴细节中。</p>
+                <div style="text-align: center;">
+                <img src="IMGE/图片/OIP-C.jpg" alt="周恩来的西花厅" width="60%">
+                <div class="caption">6月29日，西花厅里的一场家庭会议（图片来源：网络）</div>
+            </div>
+         
+                <p>1960年的一天，周恩来总理罕见地对秘书何谦发起了火。事情起因是何谦未经总理允许，擅自修缮了总理的住所——西花厅。
+                    秘书何谦看到总理居住条件如此简陋，心疼不已，屡次劝总理将西花厅适当修缮一番，但都被回绝了。
+                    然而，何谦还是趁周恩来赴广东出差两个月期间，对西花厅进行了修缮，包括在潮湿的青砖上铺上木地板、封严漏风的窗户、更换发霉的旧地毯及旧灯具等。周恩来视察归来，发现这些变化后大发雷霆，要求立即恢复原状。
+                    在周恩来的坚持下，工作人员把西花厅的地毯、灯具、窗帘等能够挪动的东西全部搬走，已经修缮好的地板、窗户，再换的话，又是一笔费用，周恩来只好让秘书算账，换过的东西他要个人付款，绝不用国家的钱。</p>
+         
+                <p>周恩来总理的廉洁自律，不仅体现在他对个人生活的严格要求上，更体现在他对国家利益的坚定维护上。他深知国家正处于困难时期，各方面建设都需要资金，因此坚决反对用公款为自己家里装修。
+                    这种廉洁奉公的精神，不仅赢得了人民群众的尊敬和爱戴，也为广大党员干部树立了榜样。</p>
+
+                    <div style="text-align: center;">
+                    <img src="IMGE/图片/3d423f902ab0e0f3e62cb37ce79ff881.jpeg" alt="合影" width="60%">
+                    <div class="caption">1933年12月，周恩来和红一方面军领导人在福建建宁合影。（图片来源：网络）</div>
+                </div>
+
+                <p>除了对住所的严格要求外，周恩来总理在饮食上也是极为简朴。他常常在食堂与工作人员一起排队打饭，从不搞特殊化。有一次，食堂的师傅为了照顾总理的身体，特意为他做了一道红烧肉。
+                    然而，周恩来总理却将这道菜端到了食堂的公共餐桌上，与大家一起分享。这一举动，让在场的所有人都深受感动，也更加坚定了他们跟随总理为国家奋斗的决心。</p>
+         
+                <p>周恩来总理的清廉风范，不仅体现在他个人的生活上，更体现在他对家人的严格要求上。他的弟弟周恩寿曾向他提出希望到北京工作的请求，但周恩来总理却坚决拒绝，并告诉他要留在老家，为家乡的建设贡献力量。
+                    这种公私分明、廉洁自律的精神，不仅赢得了人民群众的尊敬和爱戴，也为广大党员干部树立了榜样。</p>
+         
+                    <div style="text-align: center;">
+                    <img src="IMGE/图片/77bc96f54c1ffaf5b58d1857419dbb0a.jpeg" alt="肖像照" width="60%">
+                    <div class="caption">1949年9月17日，周恩来在新政协筹备会上作报告。（图片来源：网络）</div>
+                </div>
+         
+                <p>周恩来总理，一位伟大的无产阶级革命家、政治家、军事家、外交家，他的清廉风范如同璀璨星辰，照亮了中国共产党人的前行之路。
+                    在西花厅的简朴生活中，我们看到了他对国家利益的至高无上；在食堂的公共餐桌上，我们感受到了他与人民同甘共苦的深情厚谊。
+                    周恩来总理的一生，是廉洁自律、无私奉献的一生，他的精神将永远激励着后人，为实现中华民族的伟大复兴而不懈奋斗。</p>
+            </div>
+        </div>   
+        <div><footer>
+            <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+        </footer> </div>
+        <script>
+            let currentIndex = 0;
+    
+            function showSlide(index) {
+                const slides = document.querySelector('.carousel-images');
+                const totalSlides = document.querySelectorAll('.carousel-image').length;
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = 'translateX(' + offset + '%)';
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            setInterval(() => {
+                nextSlide();
+            }, 4000);
+            
+            showSlide(currentIndex);
+        </script>
+</body>
+</html>

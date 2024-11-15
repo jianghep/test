@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div class="additional-text">
+        <div class="ccc">
+        <h1>大学生廉洁文化的未来之路</h1></div>
+        <p>在百年党史的光辉照耀下，廉洁文化作为中华民族优秀传统文化的重要组成部分，始终以其独特的魅力影响着一代又一代的中国人。
+            对于当代大学生而言，廉洁文化不仅是个人品德修养的基石，更是未来成长道路上的指路明灯。那么，面对未来，大学生应该如何去做呢？</p>
+          
+            <h2>一、坚定理想信念，筑牢廉洁之基</h2>
+            <p>大学生应深入学习习近平新时代中国特色社会主义思想，全面贯彻党的二十大精神，将廉洁文化内化于心、外化于行。
+                通过参加廉洁教育活动、阅读廉洁文化经典、聆听廉洁主题讲座等方式，不断加深对廉洁文化的理解和认同，树立正确的世界观、人生观、价值观，筑牢廉洁自律的思想根基。</p>
+     
+            <h2>二、勇于担当作为，践行廉洁之责</h2>
+            <p>在未来的学习和工作中，大学生应勇于担当时代赋予的责任和使命，积极投身社会实践，将廉洁文化融入日常行为中。无论是在学术研究、校园活动还是社会实习中，
+                都要坚持诚实守信、公平公正的原则，拒绝任何形式的学术不端、贪污腐败等行为，用实际行动践行廉洁之责，为构建风清气正的社会环境贡献力量。</p>
+     
+            <h2>三、提升综合素质，增强廉洁之能</h2>
+            <p>面对日益激烈的竞争环境，大学生应不断提升自己的综合素质，包括专业知识、实践能力、创新思维和团队协作能力等。同时，还要注重培养自己的廉洁意识和廉洁能力，
+                学会在复杂多变的社会环境中保持清醒的头脑和坚定的立场，能够识别和抵制各种诱惑和腐败行为，确保自己在未来的职业生涯中始终保持廉洁自律的作风。</p>
+     
+            <h2>四、传播廉洁文化，引领社会风尚</h2>
+            <p>作为新时代的大学生，我们不仅要自己做到廉洁自律，还要积极传播廉洁文化，引领社会风尚。可以通过社交媒体、志愿服务、校园文化活动等多种渠道，向身边的人宣传廉洁文化的重要性和价值，倡导诚信、公正、廉洁的社会风气。
+                同时，还可以积极参与反腐倡廉的社会实践，为构建和谐社会、实现国家治理体系和治理能力现代化贡献自己的力量。</p>
+         
+            <h2>五、持续学习进步，勇攀事业高峰</h2>
+            <p>在未来的道路上，大学生应始终保持学习的热情和进取的精神，不断拓宽知识视野、提升专业技能和综合素质。同时，还要关注国家发展和社会变革的趋势，紧跟时代步伐，勇于探索未知领域，勇攀事业高峰。
+                在追求个人成长和事业发展的同时，始终坚守廉洁自律的底线，以高尚的品德和卓越的成就赢得社会的尊重和认可。</p>
+
+            <p>总之，面对未来，大学生应以廉洁文化为引领，坚定理想信念、勇于担当作为、提升综合素质、传播廉洁文化、持续学习进步。只有这样，才能在未来的道路上走得更远、更稳、更精彩！</p>
+        </div>
+    <div><footer>
+        <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+    </footer></div>
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-image').length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slides.style.transform = 'translateX(' + offset + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+        
+        showSlide(currentIndex);
+    </script>
+
+</body>
+</html>

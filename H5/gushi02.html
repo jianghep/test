@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    <body>
+        <div class="additional-text">
+            <div class="ccc">
+                <h1>朱德总司令的廉洁自律</h1>
+            <div class="container">
+                <p>朱德总司令，作为中国人民解放军的主要缔造者之一，他的廉洁自律和无私奉献精神，同样成为了后人学习的楷模。</p>
+            
+                <div style="text-align: center;">
+                    <video width="80%" height="80% " controls>
+                        <source src="IMGE/58b563d61b24af435d1c33ab9d468fed.mp4" type="video/mp4" >
+                    </video>
+                <div class="caption">总司令朱德借钱赡养老母亲的一段故事（图片来源：网络）</div>
+            </div>
+         
+                <p>1937年初冬，驻扎在山西洪洞战地的八路军总司令朱德，得知家中近况颇为寥落，已经到了揭不开锅的境地。
+                    一想到自己80岁的老母亲在这个荒年可能吃不饱也穿不暖，朱德心里虽急，却因囊中羞涩而无可奈何。
+                    于是，他向在四川泸州开药店的好友戴与龄写了一封“借款信”，希望他能接济一下家中老母。</p>
+         
+                <p>信中，朱德明确表示自己还不起这笔钱，也并不打算还。“我十数年实无一钱，即将来亦如是。我以好友关系向你募贰佰元中币，速寄家中朱理书收。
+                    此款我亦不能还你，请作捐助吧。”接信后，戴与龄随即给朱德家里寄去了两百元中币。</p>
+
+                <p>朱德总司令的“借款信”，不仅展现了他对家庭的深厚感情，更展现了他作为共产党人的廉洁自律和高尚品德。他深知自己身为八路军总指挥，
+                    应该以身作则，不搞特殊化，不利用职权谋取私利。这种精神，不仅赢得了人民群众的信任和拥护，也为广大党员干部树立了榜样。</p>
+         
+                <p>在抗日战争时期，朱德总司令常常身先士卒，深入前线指挥作战。然而，他的生活却异常简朴。他常常穿着补丁衣服，吃着粗茶淡饭，与战士们同甘共苦。有一次，他的一位老朋友来看望他，看到他穿着补丁衣服，便劝他换一件新衣服。
+                    然而，朱德总司令却笑着说：“衣服能穿就行，何必讲究那么多呢？”这种艰苦朴素的精神，不仅赢得了战士们的尊敬和爱戴，也激励着他们更加努力地为国家奋斗。</p>
+         
+            </div>
+        </div>   
+        <div><footer>
+            <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+        </footer> </div>
+        <script>
+            let currentIndex = 0;
+    
+            function showSlide(index) {
+                const slides = document.querySelector('.carousel-images');
+                const totalSlides = document.querySelectorAll('.carousel-image').length;
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = 'translateX(' + offset + '%)';
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            setInterval(() => {
+                nextSlide();
+            }, 4000);
+            
+            showSlide(currentIndex);
+        </script>
+</body>
+</html>

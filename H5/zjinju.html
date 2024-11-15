@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS code */
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin: 0;
+            height: auto; 
+            position: relative; 
+            overflow: auto; 
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease; 
+        }
+
+        .carousel-image {
+            min-width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            width: 100%; 
+            background: linear-gradient(to bottom right, #f0f1f3, rgba(255, 255, 255, 0.5) 50%, rgba(58, 139, 226, 0.8) 75%); 
+            z-index: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 40px; 
+        }
+
+        .logo {
+            width: 500px ;
+            height: 100px; 
+        }
+
+        .search-and-date {
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 80%; 
+            height: 5px; 
+            background-color: rgb(149, 207, 246); 
+            margin: 0px 0; 
+        }
+
+        .navigation {
+            background: rgba(192, 228, 244, 0.8); 
+            display: flex; 
+            list-style-type: none; 
+            padding: 10px ; 
+            margin: 0; 
+            justify-content: center; 
+            width: 100%; 
+        }
+
+        .navigation li {
+            margin: 0 10px; 
+            padding: 10px; 
+        }
+
+        .navigation a {
+            text-decoration: none; 
+            color: rgb(0, 0, 0); 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        }
+
+        .additional-text {
+            width: 85%; 
+            background: rgba(240, 245, 252, 0.95); 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: justify; 
+        }
+        .ccc {
+            text-align: center;
+        }
+        
+        .navigation li {
+            position: relative; 
+        }
+        
+        footer {
+            padding: 20px 0; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: rgba(237, 241, 246, 0.8); 
+            list-style-type: none; 
+            padding: 5px 0; 
+            margin: 0; 
+            z-index: 2; 
+            white-space: nowrap; 
+        }
+
+        .navigation li:hover .dropdown {
+            display: block; 
+        }
+
+        .dropdown li {
+            padding: 5px 10px; 
+        }
+
+        .dropdown a {
+            color: rgb(0, 0, 0);
+            text-decoration: none; 
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .logo {
+                width: 100%; 
+                height: auto; 
+            }
+            .search-and-date {
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px 0; 
+            }
+            .navigation {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .navigation li {
+                margin: 10px 0; 
+            }
+            .dropdown {
+                position: static; 
+            }
+            .carousel {
+                height: 50vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMGE/图片/校徽.png" alt="校徽" class="logo">
+        <div class="search-and-date">
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+                <button>搜索</button>
+            </div>
+            <div class="date">
+                <?php echo date("Y年n月j日"); ?> 
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="navigation">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="wenhua.html">文化概括</a></li>
+        <li><a href="shixiang.html">指导思想</a></li>
+        <li>
+            <a href="gushi.html">廉洁故事</a>
+            <ul class="dropdown">
+                <li><a href="gushi01.html">廉洁故事1：周恩来</a></li>
+                <li><a href="gushi02.html">廉洁故事2：朱德</a></li>
+                <li><a href="gushi03.html">廉洁故事3：张桂梅</a></li>
+            </ul>
+        </li>
+        <li><a href="zjinju.html">主题金句</a></li>
+        <li>
+            <a href="zhanwang.html">主题展望</a>
+            <ul class="dropdown">
+                <li><a href="zw01.html">主题展望</a></li>
+                <li><a href="zw02.html">感恩公正</a></li>
+                <li><a href="zw03.html">大学生怎么做</a></li>
+            </ul>
+        </li>
+    </ul>
+    <body>
+        <div class="additional-text">
+            <div class="ccc">
+                <h1>廉洁奉公，永葆清正廉洁的政治本色</h1>
+                <p>颁授仪式上的讲话。廉洁，是共产党人的鲜明政治本色，是党的光荣传统和优良作风的重要体现。</p>
+                <blockquote>
+                    <p>习近平：全党同志都要明大德、守公德、严私德，清清白白做人、干干净净做事，做到克己奉公、以俭修身，永葆清正廉洁的政治本色。</p>
+                   
+                    <div style="text-align: center;">
+                        <img src="IMGE/图片/W020221025794974396335.jpg" alt="习近平主席71发表重要讲话" width="70%">
+                        <div class="caption">这段话出自2021年6月29日习近平总书记在庆祝中国共产党成立100周年“七一勋章”颁授仪式上的讲话。</div>
+                    </div>
+
+                    <p>习近平总书记关于廉洁奉公的重要论述，为我们指明了方向，提供了遵循。</p>
+                </blockquote>
+                
+                <h2>一、廉洁奉公的精神内涵</h2>
+                <p>习近平总书记指出：“廉洁奉公，就是保持共产党人艰苦朴素、公而忘私的光荣传统，从不以功臣自居，不计较个人得失，不贪图享受，守纪律、讲规矩，生动体现了共产党人应有的道德风范。”</p>
+                <p>这段话深刻揭示了廉洁奉公的精神内涵，是共产党人应该始终坚守的道德底线和行为准则。</p>
+                <p>廉洁奉公，清正廉洁是我们党的政治本色，也是共产党人的政治品格。它要求我们在工作中始终保持艰苦朴素的作风，不为个人私利所动，不计较个人得失，始终把党和人民的利益放在首位。
+                    同时，廉洁奉公还要求我们守纪律、讲规矩，严格遵守党的各项规定和国家的法律法规，做到言行一致、表里如一。</p>
+                
+                    <div style="text-align: center;">
+                        <img src="IMGE/图片/1127609868_16249869266701n.jpg" alt="习近平等领导同志同“七一勋章”获得者合影" width="70%">
+                        <div class="caption">6月29日，庆祝中国共产党成立100周年“七一勋章”颁授仪式在北京人民大会堂金色大厅隆重举行。习近平等领导同志同“七一勋章”获得者合影。新华社记者 谢环驰 摄</div>
+                    </div>
+
+                <h2>二、廉洁奉公的实践要求</h2>
+                <blockquote>
+                    <p>习近平总书记强调：“全党同志都要明大德、守公德、严私德，清清白白做人、干干净净做事，做到克己奉公、以俭修身，永葆清正廉洁的政治本色。”</p>
+                </blockquote>
+                <p>这是对全党同志提出的明确要求，也是廉洁奉公精神在实践中的具体体现。</p>
+                <p>明大德，就是要坚定理想信念，始终保持对马克思主义的信仰、对社会主义和共产主义的信念，对党和人民的忠诚。</p>
+                <p>守公德，就是要树立正确的世界观、人生观、价值观，自觉践行社会主义核心价值观，做到言行一致、以身作则。</p>
+                <p>严私德，就是要严格要求自己，做到自重、自省、自警、自励，始终保持共产党人的浩然正气。</p>
+                
+                <h2>三、传承廉洁文化，发扬廉洁传统</h2>
+                <p>中华优秀传统文化源远流长，其中蕴含着丰富的廉洁文化经典。</p>
+                <div class="quote">
+                    <p>“出淤泥而不染，濯清涟而不妖。”——宋代周敦颐《爱莲说》</p>
+                    <p>这是对莲花高洁品质的赞美，启示我们要在复杂多变的社会环境中保持清廉本色。</p>
+                </div>
+                <div class="quote">
+                    <p>“不义而富且贵，于我如浮云。”——孔子《论语》</p>
+                    <p>孔子强调追求财富和地位应以道义为前提。</p>
+                </div>
+                <div class="quote">
+                    <p>“其身正，不令而行；其身不正，虽令不从。”——《论语》</p>
+                    <p>它告诉我们，领导干部只有做到廉洁自律、以身作则，才能赢得群众的信任和尊重。</p>
+                </div>
+                <p>在新时代背景下，我们要深入挖掘和传承党的廉洁文化，发扬廉洁传统。</p>
+                <p>我们要通过多种形式加强廉洁文化宣传教育，加强学习教育，建立健全监督机制，注重发挥先进典型的示范引领作用。</p>
+                
+                <p>廉洁奉公是共产党人的政治本色和道德风范。让我们深入学习贯彻习近平总书记关于廉洁奉公的重要论述精神，不断提高自身的廉洁意识和自律能力。</p>
+                <p>同时，我们还要积极传承和发扬党的廉洁文化传统，为实现中华民族伟大复兴的中国梦贡献力量！</p>
+            </div>
+        </div>
+        <div><footer>
+            <span>地址：长沙市星沙经济技术开发区天华路322号    邮编：410100</span>
+        </footer> </div>
+        <script>
+            let currentIndex = 0;
+    
+            function showSlide(index) {
+                const slides = document.querySelector('.carousel-images');
+                const totalSlides = document.querySelectorAll('.carousel-image').length;
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = 'translateX(' + offset + '%)';
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            setInterval(() => {
+                nextSlide();
+            }, 4000);
+            
+            showSlide(currentIndex);
+        </script>
+</body>
+</html>
